@@ -1,0 +1,44 @@
+@media only screen and (orientation: landscape){
+	
+	.grid{
+		width: calc(100dvh - 100px);
+        height: calc(100dvh - 100px);
+	}
+	
+	.tile {
+		font-size: calc(5dvh + 5px);
+	}
+	
+	#header{
+		font-size: calc(3dvh + 3px);
+	}
+
+	.btn{
+		font-size: calc(3dvh + 5px);
+        padding: 2dvh;
+	}
+}
+
+@media only screen and (orientation: portrait){
+	
+	.grid{
+		width: calc(100dvw*(5 / 6));
+        height: calc(100dvw*(5 / 6));
+	}
+	
+	.tile {
+		font-size: calc(4dvw + 5px);
+	}
+	
+	#header{
+		font-size: calc(2dvw + 7px);
+	}
+
+	.btn{
+		font-size: calc(3dvw + 5px);
+        padding: 2dvw;
+	}
+}
+
+
+ 

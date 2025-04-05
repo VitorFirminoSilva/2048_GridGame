@@ -1,38 +1,111 @@
 main{
-    text-align: center;
-}
-
-hr{
-    width: 500px;
-}
-
-#grid{
-    width: 400px;
-    height: 400px;
-
-    background-color: #cdc1b5;
-    border: 6px solid #bbada0;
-
+	width: calc(100dvw - 30px);
+    height: calc(100dvh - 10px);
     margin: 0 auto;
+	
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    justify-content: center;
+}
+
+.grid{
+	position: relative;
+	width: calc(100dvw*(5 / 6));
+    height: calc(100dvw*(5 / 6));
+	
+	margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-
+	
+	background-color: #cdc1b5;
+	
 }
 
+.grid::after{
+	content: '';
+    position: absolute;
+    inset: -6px;
+	z-index: -1;
+    background: repeating-conic-gradient(from var(--angle), transparent 0 5%, var(--color-grid) 50% 5%);
+    animation: spin 10s linear infinite;
+}
+
+@property --color{
+	syntax: "<color>";
+	initial-value: #bbada0;
+	inherits: false;
+}
+
+@property --angle{
+	syntax: "<angle>";
+	initial-value: -45deg;
+	inherits: false;
+}
+@keyframes spin{
+	from{
+		--angle: -45deg;
+	}
+	to{
+		--angle: 315deg;
+	}
+}
+
+
 .tile{
-    width: 90px;
-    height: 90px;
+	
+	box-sizing: content-box;
+    width: calc((100% - 40px) / 4);
+    height: calc((100% - 40px) / 4);
     border: 5px solid #bbada0;
 
-    font-size: 2.4rem;
-    font-weight: bold;
-    display: flex;
+	display: flex;
     justify-content: center;
     align-items: center;
 
-    transition: transform 10s cubic-bezier(0.39, 0.58, 0.57, 1);
+    font-size: 1.9rem;
+    font-weight: bold;
+	color: white;
+
+    /*transition: transform 10s cubic-bezier(0.39, 0.58, 0.57, 1);*/
 }
 
+#header{
+	display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    text-align: center;
+	margin-top: 10px;
+	font-size: 1.2rem;
+}
+
+#buttons{
+	display: flex;
+	gap: 20px;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.btn{
+	font-size: 1.2rem;
+    border: none;
+    background-color: #bf9bc5;
+    color: #272626;
+    padding: 10px;
+    border-radius: 10%;
+    box-shadow: #777575 2px 4px 7px;
+}
+
+.btn:active{
+	transform: translateY(4px);
+    box-shadow: none;
+}
+
+.controllers {
+	display: flex;
+	gap: 10px;
+}
 
 /* Color tiles */
 
@@ -48,55 +121,57 @@ hr{
 
 .x8 {
     background-color: #f4b17a;
-    color: white;
 }
 
 .x16{
     background-color: #f59575;
-    color: white;
 }
 
 .x32{
     background-color: #f57c5f;
-    color: white;
 }
 
 .x64{
     background-color: #f65d3b;
-    color: white;
 }
 
 .x128{
     background-color: #edce71;
-    color: white;
 }
 
 .x256{
     background-color: #edcc63;
-    color: white;
 }
 
 .x512{
     background-color: #edc651;
-    color: white;
 }
 
 .x1024{
     background-color: #eec744;
-    color: white;
 }
 
 .x2048{
     background-color: #ecc230;
-    color: white;
 }
 
-.x4096 {
+.x4096{
     background-color: #fe3d3d;
-    color: white;
 }
 
-.x8192 {
-    background-color: #ff2020;
-    color: white;
+.x8192{
+    background-color: #ff2020; 
 }
+
+.x16384{
+    background-color: #db1b1b;
+}
+
+.x32768{
+    background-color: #c90909;
+}
+
+.x65536{
+	background-color: #a50101;
+}
+

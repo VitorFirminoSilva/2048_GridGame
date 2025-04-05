@@ -5,20 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
-    <!-- <link rel="stylesheet" href="src/css/reset.css"> -->
-    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/reset.css">
+	<link rel="stylesheet" href="src/css/main.css">
+	<link rel="stylesheet" href="src/css/responsive.css">
 
-    <!-- JS -->
-    <script src="src/js/main.js"></script>
 
     <title>2048 - Grid Game</title>
 </head>
 <body>
     <main>
-        <h1>2048</h1>
-        <hr>
-        <h2>Score: <span id="score">0</span></h2>
-        <div id="grid"></div>
+		<div id="header">
+			<h2>Score: <span id="score">0</span></h2>
+			<h2>Record: <span id="record">0</span></h2> <!-- 30 spaces -->
+		</div>
+
+		
+		<div class="grid"></div>
+		
+		<div id="buttons">
+			<button class="btn" id="button-reset">Recomeçar</button>
+			<button class="btn" id="button-return-left">&#8617;</button>
+			<button class="btn" id="button-return-right">&#8618;</button>
+		</div>
     </main>
+	<script src="./src/js/main.js" type="module"></script>
 </body>
 </html>
