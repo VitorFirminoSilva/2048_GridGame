@@ -1,4 +1,3 @@
-import StorageAPI from "../js/api_storage/StorageApi.js";
 import Controller from "./GameController.js";
 
 var startX, startY,finalX, finalY;

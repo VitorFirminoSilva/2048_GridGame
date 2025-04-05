@@ -1,4 +1,4 @@
-import StorageAPI from "../js/api_storage/StorageApi.js";
+import StorageAPI from "./StorageAPI.js";
 
 const gridElement = document.querySelector('.grid');
 
